@@ -40,12 +40,24 @@ describe('e2p', () => {
     return done.then(_res => assert(_res, res, 'res must be equal'))
   })
 
-  it('resolve - array', () => {
+  it('resolve - array (then)', () => {
     let test = new EventEmitter()
     let done = e2p(test, 'done')
     let res = [ 1, 2, 3 ]
     test.emit.apply(test, [ 'done', ...res ])
     return done.then(_res => assert(_res, res, 'res must be equal'))
+  })
+
+  it('resolve - array (catch)', () => {
+    let test = new EventEmitter()
+    let done = e2p(test, 'done')
+    let res = [ 1, 2, 3 ]
+    test.emit.apply(test, [ 'done', ...res ])
+    return done.spread((arg0, arg1, arg2) => {
+      assert(arg0, res[0], 'arg0 must be equal')
+      assert(arg1, res[1], 'arg1 must be equal')
+      assert(arg2, res[2], 'arg2 must be equal')
+    })
   })
 
   it('reject - async', () => {

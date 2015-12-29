@@ -1,6 +1,6 @@
 'use strict'
 
-import { isUndefined, omit } from 'lodash'
+import { isUndefined, omit, toArray } from 'lodash'
 import P from 'bluebird'
 import rawe2p from 'event-to-promise'
 
@@ -16,5 +16,5 @@ export default function e2p(obj, res, rej) {
 function extr(res) {
   return res.length <= 1
     ? res[0]
-    : omit(res, 'event')
+    : toArray(omit(res, 'event'))
 }
