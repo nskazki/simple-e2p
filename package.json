@@ -1,6 +1,6 @@
 {
   "name": "simple-e2p",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "wrapper for event-to-promise",
   "main": "src-build/index.js",
   "scripts": {
