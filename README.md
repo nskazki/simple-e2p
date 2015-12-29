@@ -8,6 +8,7 @@ npm i -S simple-e2p
 
 ```js
 import e2p from 'simple-e2p'
+import EventEmitter from 'events'
 
 var test = new EventEmitter()
 e2p(test, 'event').then(console.log)
@@ -19,6 +20,7 @@ test.emit('event', { foo: 'bar' })
 
 ```js
 import e2p from 'simple-e2p'
+import EventEmitter from 'events'
 
 var test = new EventEmitter()
 e2p(test, '_', 'error').catch(console.log)
