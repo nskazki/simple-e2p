@@ -2,7 +2,7 @@
   "name": "simple-e2p",
   "author": "nskazki@gmail.com",
   "license": "MIT",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A way to turn a one-time event into a promise",
   "homepage": "https://github.com/nskazki/simple-e2p",
   "keywords": [
