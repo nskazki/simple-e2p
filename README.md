@@ -1,20 +1,22 @@
 # simple-e2p
 
+A way to turn a one-time event into a promise
+
 ```
-npm i -S simple-e2p
+yarn add simple-e2p
 ```
 
-### Example
+## Example
 
 ```js
 import e2p from 'simple-e2p'
 import EventEmitter from 'events'
 
-var test = new EventEmitter()
+const test = new EventEmitter()
 e2p(test, 'event').then(console.log)
 test.emit('event', { foo: 'bar' })
 /*
-    { foo: 'bar' }
+  { foo: 'bar' }
 */
 ```
 
@@ -22,12 +24,10 @@ test.emit('event', { foo: 'bar' })
 import e2p from 'simple-e2p'
 import EventEmitter from 'events'
 
-var test = new EventEmitter()
+const test = new EventEmitter()
 e2p(test, '_', 'error').catch(console.log)
 test.emit('error', { foo: 'bar' }, { abs: 123 })
 /*
-    [ { foo: 'bar' }, { abs: 123 } ]
+  [{ foo: 'bar' }, { abs: 123 }]
 */
 ```
-
-For more examples see `/test` folder
