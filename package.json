@@ -24,9 +24,9 @@
     "test": "mocha test"
   },
   "dependencies": {
-    "bluebird": "^3.1.1",
-    "event-to-promise": "^0.6.0",
-    "lodash": "^3.10.1"
+    "bluebird": "^3.7.1",
+    "event-to-promise": "^0.8.0",
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",

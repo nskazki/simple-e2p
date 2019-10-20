@@ -53,7 +53,7 @@ describe('e2p', () => {
     const done = e2p(test, 'done')
     const res = [1, 2, 3]
     test.emit('done', ...res)
-    return done.spread((arg0, arg1, arg2) => {
+    return done.then(([ arg0, arg1, arg2 ]) => {
       assert(arg0, res[0], 'arg0 must be equal')
       assert(arg1, res[1], 'arg1 must be equal')
       assert(arg2, res[2], 'arg2 must be equal')
