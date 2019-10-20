@@ -5,7 +5,7 @@ import P from 'bluebird'
 import rawe2p from 'event-to-promise'
 
 export default function e2p(obj, res, rej) {
-  let p = (rawe2p(obj, res, isUndefined(rej)
+  const p = (rawe2p(obj, res, isUndefined(rej)
     ? { array: true, ignoreErrors: true }
     : { array: true, error: rej }))
   return p.then(
