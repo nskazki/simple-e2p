@@ -16,10 +16,10 @@
   "bugs": {
     "url": "https://github.com/nskazki/simple-e2p/issues"
   },
-  "main": "src-build",
+  "main": "build",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "babel src --retain-lines --out-dir src-build",
+    "build": "babel src -d build",
     "eslint": "eslint src test",
     "mocha": "mocha test",
     "test": "npm run eslint && npm run mocha"
@@ -30,8 +30,11 @@
     "lodash": "^3.10.1"
   },
   "devDependencies": {
-    "babel": "^5.8.23",
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
     "babel-eslint": "^4.1.6",
+    "babel-plugin-add-module-exports": "^1.0.2",
     "eslint": "1.10.1",
     "eslint-plugin-mocha": "^1.1.0",
     "mocha": "^2.3.4"
